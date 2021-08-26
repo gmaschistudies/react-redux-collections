@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledHomeContainer = styled.div`
+export const StyledCharactersListContainer = styled.div`
   max-width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
@@ -9,7 +9,7 @@ export const StyledHomeContainer = styled.div`
   flex-direction: column;
 `;
 
-export const StyledHomeMainContentContainer = styled.div`
+export const MainContentContainer = styled.div`
   min-height: calc(100vh - 100px);
   width: 1200px;
   box-sizing: border-box;

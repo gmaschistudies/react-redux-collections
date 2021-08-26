@@ -2,5 +2,6 @@
   "text": "texto",
 
   "routes.example": "/example",
-  "routes.home": "/"
+  "routes.home": "/",
+  "routes.characters-list": "/characters-list"
 }
