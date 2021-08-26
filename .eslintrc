@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jest",
+    "testing-library",
+    "jest-dom"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "_env_": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-loop-func": "off",
+    "@typescript-eslint/no-duplicate-imports": 2,
+    "@typescript-eslint/no-empty-function": 2,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "linebreak-style": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": 0,
+    "class-methods-use-this": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/prefer-default-export": "off"
+  }
+}

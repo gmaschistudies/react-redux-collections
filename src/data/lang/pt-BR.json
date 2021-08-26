@@ -1,0 +1,6 @@
+{
+  "text": "texto",
+
+  "routes.example": "/example",
+  "routes.home": "/"
+}
