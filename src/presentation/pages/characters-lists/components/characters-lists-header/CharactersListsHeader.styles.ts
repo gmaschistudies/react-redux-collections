@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCharactersListHeaderContainer = styled.div`
+export const StyledCharactersListsHeaderContainer = styled.div`
   max-width: 500px;
   height: 300px;
   box-sizing: border-box;

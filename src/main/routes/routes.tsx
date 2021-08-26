@@ -3,7 +3,7 @@ import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useIntl } from 'react-intl';
 import L10n from '@/data/l10n/L10n';
 import history from '../history/history';
-import { Home, CharactersList } from '@/presentation/pages';
+import { Home, CharactersLists } from '@/presentation/pages';
 
 const HomeRedirect = (
   <Redirect
@@ -26,8 +26,8 @@ const Routes: FC = (): RE => {
         />
         <Route
           exact
-          path={intl.formatMessage({ id: 'routes.characters-list' })}
-          component={CharactersList}
+          path={intl.formatMessage({ id: 'routes.characters-lists' })}
+          component={CharactersLists}
         />
         {HomeRedirect}
       </Switch>

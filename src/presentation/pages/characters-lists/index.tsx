@@ -1,15 +1,15 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { StyledCharactersListContainer } from './index.styles';
 import Header from '@/presentation/components/header/Header';
-import CharactersListHeader from '@/presentation/pages/characters-lists/components/characters-header/CharactersHeader';
+import CharactersListsHeader from '@/presentation/pages/characters-lists/components/characters-lists-header/CharactersListsHeader';
 
-const CharactersList: FC = (): RE => {
+const CharactersLists: FC = (): RE => {
   return (
     <StyledCharactersListContainer>
       <Header />
-      <CharactersListHeader />
+      <CharactersListsHeader />
     </StyledCharactersListContainer>
   );
 };
 
-export default CharactersList;
+export default CharactersLists;

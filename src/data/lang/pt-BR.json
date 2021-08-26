@@ -3,5 +3,5 @@
 
   "routes.example": "/example",
   "routes.home": "/",
-  "routes.characters-list": "/characters-list"
+  "routes.characters-lists": "/characters-lists"
 }
