@@ -3,5 +3,6 @@
 
   "routes.example": "/example",
   "routes.home": "/",
-  "routes.characters-lists": "/characters-lists"
+  "routes.characters-lists": "/characters-lists",
+  "routes.characters-page": "/characters-page"
 }

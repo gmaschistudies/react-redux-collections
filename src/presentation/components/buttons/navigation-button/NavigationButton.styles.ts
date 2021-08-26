@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledNavigationButton = styled.button`
-  width: 200px;
-  height: 40px;
+  width: 250px;
+  min-height: 40px;
   box-sizing: border-box;
   padding: 5px;
   margin: 10px;
@@ -10,10 +10,11 @@ export const StyledNavigationButton = styled.button`
   border-radius: 4px;
   background-color: #333;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: 1s;
+  text-align: center;
 
   &:hover {
     background-color: black;
