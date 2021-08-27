@@ -16,7 +16,7 @@ const RickyAndMortyCard: FC<Props> = ({
 }: Props): RE => {
   return (
     <StyledRickyAndMortyCard>
-      <div className="ricky-and-morty-card-image">{image}</div>
+      <img className="ricky-and-morty-card-image" src={image} alt={name} />
       <div className="ricky-and-morty-card-info">
         <h3 className="ricky-and-morty-card-info-name">{name}</h3>
         <p className="ricky-and-morty-card-info-general-info">

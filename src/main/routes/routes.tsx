@@ -13,6 +13,9 @@ const HomeRedirect = (
   />
 );
 
+// "routes.characters-page.pokemon": "/characters-page/pokemon",
+// "routes.characters-page.ricky-and-morty": "/characters-page/ricky-and-morty"
+
 const Routes: FC = (): RE => {
   const intl = useIntl();
 

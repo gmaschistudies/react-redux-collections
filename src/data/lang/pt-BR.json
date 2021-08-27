@@ -4,5 +4,7 @@
   "routes.example": "/example",
   "routes.home": "/",
   "routes.characters-lists": "/characters-lists",
-  "routes.characters-page": "/characters-page"
+  "routes.characters-page": "/characters-page/:id",
+  "routes.characters-page.pokemon": "/characters-page/pokemon",
+  "routes.characters-page.ricky-and-morty": "/characters-page/ricky-and-morty"
 }

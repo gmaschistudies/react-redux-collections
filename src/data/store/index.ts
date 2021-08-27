@@ -1,10 +1,16 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
 import L10nSlice from '@/data/l10n/L10nSlice';
+// eslint-disable-next-line import/no-cycle
+import PokemonSlice from '@/data/store/slices/pokemon/PokemonSlice';
+// eslint-disable-next-line import/no-cycle
+import RickyAndMortySlice from '@/data/store/slices/ricky-and-morty/RickyAndMortySlice';
 
 const store = configureStore({
   reducer: {
     l10n: L10nSlice,
+    pokemon: PokemonSlice,
+    rickyAndMorty: RickyAndMortySlice,
   },
 });
 
