@@ -5,10 +5,13 @@ import L10nSlice from '@/data/l10n/L10nSlice';
 import PokemonSlice from '@/data/store/slices/pokemon/PokemonSlice';
 // eslint-disable-next-line import/no-cycle
 import RickyAndMortySlice from '@/data/store/slices/ricky-and-morty/RickyAndMortySlice';
+// eslint-disable-next-line import/no-cycle
+import CollectionSlice from '@/data/store/slices/collection/CollectionSlice';
 
 const store = configureStore({
   reducer: {
     l10n: L10nSlice,
+    collection: CollectionSlice,
     pokemon: PokemonSlice,
     rickyAndMorty: RickyAndMortySlice,
   },

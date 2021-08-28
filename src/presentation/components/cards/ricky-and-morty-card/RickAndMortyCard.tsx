@@ -1,5 +1,10 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
+import { useAppDispatch, useAppSelector } from '@/data/store/hooks';
 import { StyledRickyAndMortyCard } from './RickAndMortyCard.styles';
+import {
+  addToCollection,
+  selectItemByName,
+} from '@/data/store/slices/collection/CollectionSlice';
 
 interface Props {
   name: string;
@@ -14,8 +19,19 @@ const RickyAndMortyCard: FC<Props> = ({
   gender,
   image,
 }: Props): RE => {
+  const dispatch = useAppDispatch();
+  // const collectionData = useAppSelector(selectAllCollection);
+  const itemToBeAdded = useAppSelector((state) =>
+    selectItemByName(state, name)
+  );
+  const handleContainerClick = () => {
+    if (!itemToBeAdded) {
+      dispatch(addToCollection({ type: 'pokemon', name, image }));
+    }
+  };
+
   return (
-    <StyledRickyAndMortyCard>
+    <StyledRickyAndMortyCard onClick={() => handleContainerClick()}>
       <img className="ricky-and-morty-card-image" src={image} alt={name} />
       <div className="ricky-and-morty-card-info">
         <h3 className="ricky-and-morty-card-info-name">{name}</h3>

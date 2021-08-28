@@ -7,11 +7,13 @@ import PaginationContainer from './sub-components/pagination-container/Paginatio
 interface Props {
   currentCharacters: string;
   handleCharacterChange: () => void;
+  handlePageChange: (type: 'previous' | 'next') => void;
 }
 
 const CharactersPageHeader: FC<Props> = ({
   currentCharacters,
   handleCharacterChange,
+  handlePageChange,
 }: Props): RE => {
   const history = useHistory();
 
@@ -39,7 +41,7 @@ const CharactersPageHeader: FC<Props> = ({
           }
           onClick={() => handleCharacterChange()}
         />
-        <PaginationContainer />
+        <PaginationContainer handlePageChange={handlePageChange} />
       </div>
     </StyledCharactersPageHeaderContainer>
   );

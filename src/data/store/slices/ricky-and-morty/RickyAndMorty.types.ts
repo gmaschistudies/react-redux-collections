@@ -7,7 +7,9 @@ export interface RickyAndMortyData {
 }
 
 export interface StateInterface {
+  charactersCount: number;
   pagesFetched: number[];
+  numberOfPages: number;
   data: RickyAndMortyData[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null | undefined;
