@@ -7,6 +7,10 @@ import PokemonSlice from '@/data/store/slices/pokemon/PokemonSlice';
 import RickyAndMortySlice from '@/data/store/slices/ricky-and-morty/RickyAndMortySlice';
 // eslint-disable-next-line import/no-cycle
 import CollectionSlice from '@/data/store/slices/collection/CollectionSlice';
+import {
+  localStorageMiddleware,
+  reHydrateStore,
+} from '@/data/store/middleware';
 
 const store = configureStore({
   reducer: {
@@ -15,6 +19,9 @@ const store = configureStore({
     pokemon: PokemonSlice,
     rickyAndMorty: RickyAndMortySlice,
   },
+  preloadedState: reHydrateStore(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(localStorageMiddleware),
 });
 
 export type RootStore = typeof store;
