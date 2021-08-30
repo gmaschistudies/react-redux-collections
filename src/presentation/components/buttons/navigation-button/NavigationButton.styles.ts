@@ -6,10 +6,11 @@ export const StyledNavigationButton = styled.button`
   box-sizing: border-box;
   padding: 5px;
   margin: 10px;
-  border: 1px solid white;
+  border: ${(props) =>
+    props.theme === true ? '1px solid white' : '1px solid black'};
   border-radius: 4px;
-  background-color: #333;
-  color: white;
+  background-color: ${(props) => (props.theme === true ? '#333' : 'darkgray')};
+  color: ${(props) => (props.theme === true ? 'white' : 'black')};
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -17,6 +18,6 @@ export const StyledNavigationButton = styled.button`
   text-align: center;
 
   &:hover {
-    background-color: black;
+    background-color: ${(props) => (props.theme === true ? 'black' : '#ddd')};
   }
 `;

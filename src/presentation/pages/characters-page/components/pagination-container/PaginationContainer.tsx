@@ -1,5 +1,7 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { StyledPaginationContainer } from '@/presentation/pages/characters-page/components/pagination-container/PaginationContainer.styles';
+import { useAppSelector } from '@/data/store/hooks';
+import { selectStyle } from '@/data/store/slices/style/StyleSlice';
 
 interface Props {
   handlePageChange: (type: 'previous' | 'next') => void;
@@ -16,8 +18,10 @@ const PaginationContainer: FC<Props> = ({ handlePageChange }: Props): RE => {
     }
   };
 
+  const darkMode = useAppSelector(selectStyle);
+
   return (
-    <StyledPaginationContainer>
+    <StyledPaginationContainer theme={darkMode}>
       <button
         type="button"
         name="previous"

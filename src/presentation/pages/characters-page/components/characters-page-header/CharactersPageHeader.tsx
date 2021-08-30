@@ -27,7 +27,7 @@ const CharactersPageHeader: FC<Props> = ({
         {`${currentCharacters
           .split('-')
           .map((word) => word.replace(/^\w/, (e) => e.toUpperCase()))
-          .join(' ')} Lists`}
+          .join(' ')} Characters`}
       </h1>
       <h2 className="characters-page-header-subtitle">
         Click on a character to save it to your collection

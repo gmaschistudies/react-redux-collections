@@ -1,10 +1,12 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/data/store/hooks';
 import { StyledRickyAndMortyCard } from './RickyAndMortyCard.styles';
 import {
   addToCollection,
   selectItemByName,
 } from '@/data/store/slices/collection/CollectionSlice';
+import { selectStyle } from '@/data/store/slices/style/StyleSlice';
 
 interface Props {
   name: string;
@@ -20,7 +22,6 @@ const RickyAndMortyCard: FC<Props> = ({
   image,
 }: Props): RE => {
   const dispatch = useAppDispatch();
-  // const collectionData = useAppSelector(selectAllCollection);
   const itemToBeAdded = useAppSelector((state) =>
     selectItemByName(state, name)
   );
@@ -37,9 +38,19 @@ const RickyAndMortyCard: FC<Props> = ({
       );
     }
   };
+  const darkMode = useAppSelector(selectStyle);
+
+  const history = useHistory();
+  const path = history.location.pathname;
 
   return (
-    <StyledRickyAndMortyCard onClick={() => handleContainerClick()}>
+    <StyledRickyAndMortyCard
+      onClick={() => handleContainerClick()}
+      theme={darkMode}
+      className={
+        path.startsWith('/characters-page') ? 'card-at-character-page' : ''
+      }
+    >
       <img className="ricky-and-morty-card-image" src={image} alt={name} />
       <div className="ricky-and-morty-card-info">
         <h3 className="ricky-and-morty-card-info-name">{name}</h3>

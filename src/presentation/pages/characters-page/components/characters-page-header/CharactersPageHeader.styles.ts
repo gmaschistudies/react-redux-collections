@@ -15,6 +15,11 @@ export const StyledCharactersPageHeaderContainer = styled.div`
   .characters-page-header-title {
     font-size: 30px;
     font-weight: bold;
+    margin: 10px 0px;
+  }
+
+  .characters-page-header-subtitle {
+    margin: 10px 0px;
   }
 
   .characters-header-page-buttons-container {

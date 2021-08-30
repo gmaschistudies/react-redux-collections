@@ -1,18 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
 import { RootState } from '@/data/store';
-
-interface CollectionData {
-  type: string;
-  name: string;
-  image: string;
-  gender?: string;
-  species?: string;
-}
-
-interface StateInterface {
-  data: CollectionData[];
-}
+import { CollectionData, StateInterface } from './Collection.types';
 
 const initialState: StateInterface = {
   data: [],

@@ -6,7 +6,6 @@ export const StyledCharactersPageBodyContainer = styled.div`
   box-sizing: border-box;
   margin: 10px;
   padding: 15px;
-  border: 2px solid white;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;

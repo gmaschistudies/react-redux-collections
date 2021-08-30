@@ -10,12 +10,14 @@ import RickyAndMortyCard from '@/presentation/components/cards/ricky-and-morty-c
 import PokemonCard from '@/presentation/components/cards/pokemon-card/PokemonCard';
 import { useAppSelector } from '@/data/store/hooks';
 import { selectAllCollection } from '@/data/store/slices/collection/CollectionSlice';
+import { selectStyle } from '@/data/store/slices/style/StyleSlice';
 
 const Home: FC = (): RE => {
   const collectionData = useAppSelector(selectAllCollection);
+  const darkMode = useAppSelector(selectStyle);
 
   return (
-    <StyledHomeContainer>
+    <StyledHomeContainer theme={darkMode}>
       <Header />
       <StyledHomeMainContentContainer>
         <h1 className="home-main-content-title">Collection</h1>

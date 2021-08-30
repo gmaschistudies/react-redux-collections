@@ -4,10 +4,11 @@ export const StyledHomeContainer = styled.div`
   max-width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  border: 2px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${(props) => (props.theme === true ? 'black' : 'white')};
+  color: ${(props) => (props.theme === true ? 'white' : 'black')};
 `;
 
 export const StyledHomeMainContentContainer = styled.div`
@@ -19,7 +20,7 @@ export const StyledHomeMainContentContainer = styled.div`
   align-items: center;
   margin: 20px;
   padding: 10px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
 
   .home-main-content-title {
     font-size: 36px;
@@ -35,7 +36,7 @@ export const StyledHomeCardsContainer = styled.div`
   box-sizing: border-box;
   margin: 10px;
   padding: 15px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;

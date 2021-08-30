@@ -14,6 +14,7 @@ import CharactersPageBody from './components/characters-page-body/CharactersPage
 import CharactersPageHeader from './components/characters-page-header/CharactersPageHeader';
 import { useAppSelector } from '@/data/store/hooks';
 import PaginationContainer from '@/presentation/pages/characters-page/components/pagination-container/PaginationContainer';
+import { selectStyle } from '@/data/store/slices/style/StyleSlice';
 
 const CharactersPage: FC = (): RE => {
   const match: Record<string, string> = useParams();
@@ -60,13 +61,12 @@ const CharactersPage: FC = (): RE => {
     }
   };
 
+  const darkMode = useAppSelector(selectStyle);
+
   return (
-    <StyledCharactersPageContainer>
+    <StyledCharactersPageContainer theme={darkMode}>
       <Header />
       <StyledCharactersPageMainContentContainer>
-        <button type="button" onClick={() => handlePageChange('next')}>
-          {currentPage}
-        </button>
         <CharactersPageHeader
           currentCharacters={currentCharacters}
           handleCharacterChange={handleCharacterChange}

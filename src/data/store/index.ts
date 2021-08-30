@@ -18,24 +18,27 @@ import storage from 'redux-persist/lib/storage';
 // eslint-disable-next-line import/no-cycle
 import l10n from '@/data/l10n/L10nSlice';
 // eslint-disable-next-line import/no-cycle
-import pokemon from '@/data/store/slices/pokemon/PokemonSlice';
+import pokemon from './slices/pokemon/PokemonSlice';
 // eslint-disable-next-line import/no-cycle
-import rickyAndMorty from '@/data/store/slices/ricky-and-morty/RickyAndMortySlice';
+import rickyAndMorty from './slices/ricky-and-morty/RickyAndMortySlice';
 // eslint-disable-next-line import/no-cycle
-import collection from '@/data/store/slices/collection/CollectionSlice';
+import collection from './slices/collection/CollectionSlice';
+// eslint-disable-next-line import/no-cycle
+import style from './slices/style/StyleSlice';
 
 const rootReducer = combineReducers({
   l10n,
   pokemon,
   rickyAndMorty,
   collection,
+  style,
 });
 
 const persistConfig = {
   key: 'collection',
   version: 1,
   storage,
-  whitelist: ['collection'],
+  whitelist: ['collection', 'style'],
   blacklist: [],
 };
 

@@ -8,7 +8,7 @@ export const StyledCharacterTypeChartContainer = styled.div`
   align-items: center;
 
   .chart-title {
-    font-size: 32px;
+    font-size: calc(18px + 1vw);
     font-weight: bold;
     margin: 10px;
   }

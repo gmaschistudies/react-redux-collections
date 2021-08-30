@@ -40,8 +40,6 @@ const CharactersPageBody: FC<Props> = ({
   const rickyAndMortyPaginatedData = useAppSelector((state) =>
     selectRickyAndMortyCharactersByPage(state, currentPage)
   );
-  // const pokemonsCount = useAppSelector(selectPokemonsCount);
-  // const rickyAndMortyCount = useAppSelector(selectRickyAndMortyCharactersCount);
 
   useEffect(() => {
     if (currentCharacters === 'pokemons') {
