@@ -9,7 +9,6 @@ const PaginationContainer: FC<Props> = ({ handlePageChange }: Props): RE => {
   const handlePaginationButtonClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    console.log(e.currentTarget.name);
     if (e.currentTarget.name === 'next') {
       handlePageChange('next');
     } else {

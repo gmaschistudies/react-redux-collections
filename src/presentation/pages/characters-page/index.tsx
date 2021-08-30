@@ -27,28 +27,17 @@ const CharactersPage: FC = (): RE => {
 
   const [currentCharacters, setCurrentCharacters] = useState<string>(match.id);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [maxNumberOfPages, setMaxNumberOfPages] = useState(
-    currentCharacters === 'pokemons'
-      ? pokemonsNumberOfPages
-      : rickyAndMortyCharactersNumberOfPages
-  );
 
   const handleCharacterChange = () => {
     if (currentCharacters === 'pokemons') {
       setCurrentCharacters('ricky-and-morty');
-      setMaxNumberOfPages(rickyAndMortyCharactersNumberOfPages);
       history.push('/characters-page/ricky-and-morty');
     } else {
       setCurrentCharacters('pokemons');
-      setMaxNumberOfPages(pokemonsNumberOfPages);
       history.push('/characters-page/pokemons');
     }
     setCurrentPage(1);
   };
-
-  console.log(
-    `poke Pages: ${pokemonsNumberOfPages} | ricky Pages: ${rickyAndMortyCharactersNumberOfPages} | max: ${maxNumberOfPages}`
-  );
 
   const handlePageChange = (type: 'previous' | 'next'): void => {
     if (type === 'next') {
