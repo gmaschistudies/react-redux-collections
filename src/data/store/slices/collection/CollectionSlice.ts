@@ -35,4 +35,7 @@ export const selectAllCollection = (state: RootState) => state.collection.data;
 export const selectItemByName = (state: RootState, name: string) =>
   state.collection.data.find((item) => item.name === name);
 
+export const selectItemByType = (state: RootState, type: string) =>
+  state.collection.data.filter((item) => item.type === type).length;
+
 export default collectionSlice.reducer;

@@ -18,12 +18,19 @@ const NavigationMenu: FC = (): RE => {
       <div
         className="navigation-menu-item"
         role="none"
-        onClick={() => history.push('characters-lists')}
+        onClick={() => history.push('/characters-lists')}
         onKeyDown={() => history.push('/characters-lists')}
       >
         Characters&apos; Lists
       </div>
-      <div className="navigation-menu-item">Graph</div>
+      <div
+        className="navigation-menu-item"
+        role="none"
+        onClick={() => history.push('/info-graph')}
+        onKeyDown={() => history.push('/info-graph')}
+      >
+        Graph
+      </div>
     </StyledNavigationMenuContainer>
   );
 };
