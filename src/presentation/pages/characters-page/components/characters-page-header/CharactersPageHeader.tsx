@@ -2,7 +2,7 @@ import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useHistory } from 'react-router-dom';
 import NavigationButton from '@/presentation/components/buttons/navigation-button/NavigationButton';
 import { StyledCharactersPageHeaderContainer } from './CharactersPageHeader.styles';
-import PaginationContainer from './sub-components/pagination-container/PaginationContainer';
+import PaginationContainer from '../pagination-container/PaginationContainer';
 
 interface Props {
   currentCharacters: string;
@@ -24,8 +24,10 @@ const CharactersPageHeader: FC<Props> = ({
   return (
     <StyledCharactersPageHeaderContainer>
       <h1 className="characters-page-header-title">
-        {' '}
-        (Variable) Characters&apos; Lists
+        {`${currentCharacters
+          .split('-')
+          .map((word) => word.replace(/^\w/, (e) => e.toUpperCase()))
+          .join(' ')} Lists`}
       </h1>
       <h2 className="characters-page-header-subtitle">
         Click on a character to save it to your collection

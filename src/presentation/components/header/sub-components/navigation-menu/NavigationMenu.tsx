@@ -8,20 +8,22 @@ const NavigationMenu: FC = (): RE => {
   return (
     <StyledNavigationMenuContainer>
       <div
+        className="navigation-menu-item"
         role="none"
         onClick={() => history.push('/')}
         onKeyDown={() => history.push('/')}
       >
-        Menu 1
+        Collection
       </div>
       <div
+        className="navigation-menu-item"
         role="none"
         onClick={() => history.push('characters-lists')}
         onKeyDown={() => history.push('/characters-lists')}
       >
-        Menu 2
+        Characters&apos; Lists
       </div>
-      <div>Menu 3</div>
+      <div className="navigation-menu-item">Graph</div>
     </StyledNavigationMenuContainer>
   );
 };

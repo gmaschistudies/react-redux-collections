@@ -1,6 +1,6 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useAppDispatch, useAppSelector } from '@/data/store/hooks';
-import { StyledRickyAndMortyCard } from './RickAndMortyCard.styles';
+import { StyledRickyAndMortyCard } from './RickyAndMortyCard.styles';
 import {
   addToCollection,
   selectItemByName,
@@ -26,7 +26,15 @@ const RickyAndMortyCard: FC<Props> = ({
   );
   const handleContainerClick = () => {
     if (!itemToBeAdded) {
-      dispatch(addToCollection({ type: 'pokemon', name, image }));
+      dispatch(
+        addToCollection({
+          type: 'ricky-and-morty',
+          name,
+          image,
+          gender,
+          species,
+        })
+      );
     }
   };
 

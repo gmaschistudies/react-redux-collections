@@ -6,7 +6,7 @@ import {
 } from './index.styles';
 import Footer from '@/presentation/components/footer/Footer';
 import Header from '@/presentation/components/header/Header';
-import RickyAndMortyCard from '@/presentation/components/cards/ricky-and-morty-card/RickAndMortyCard';
+import RickyAndMortyCard from '@/presentation/components/cards/ricky-and-morty-card/RickyAndMortyCard';
 import PokemonCard from '@/presentation/components/cards/pokemon-card/PokemonCard';
 import { useAppSelector } from '@/data/store/hooks';
 import { selectAllCollection } from '@/data/store/slices/collection/CollectionSlice';

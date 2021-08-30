@@ -13,6 +13,7 @@ import {
 import CharactersPageBody from './components/characters-page-body/CharactersPageBody';
 import CharactersPageHeader from './components/characters-page-header/CharactersPageHeader';
 import { useAppSelector } from '@/data/store/hooks';
+import PaginationContainer from '@/presentation/pages/characters-page/components/pagination-container/PaginationContainer';
 
 const CharactersPage: FC = (): RE => {
   const match: Record<string, string> = useParams();
@@ -34,7 +35,7 @@ const CharactersPage: FC = (): RE => {
 
   const handleCharacterChange = () => {
     if (currentCharacters === 'pokemons') {
-      setCurrentCharacters('rick-and-morty');
+      setCurrentCharacters('ricky-and-morty');
       setMaxNumberOfPages(rickyAndMortyCharactersNumberOfPages);
       history.push('/characters-page/ricky-and-morty');
     } else {
@@ -86,6 +87,7 @@ const CharactersPage: FC = (): RE => {
           currentCharacters={currentCharacters}
           currentPage={currentPage}
         />
+        <PaginationContainer handlePageChange={handlePageChange} />
       </StyledCharactersPageMainContentContainer>
       <Footer />
     </StyledCharactersPageContainer>

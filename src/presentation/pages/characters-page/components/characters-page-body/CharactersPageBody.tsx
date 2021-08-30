@@ -4,7 +4,7 @@ import React, {
   useEffect,
 } from 'react';
 import PokemonCard from '@/presentation/components/cards/pokemon-card/PokemonCard';
-import RickyAndMortyCard from '@/presentation/components/cards/ricky-and-morty-card/RickAndMortyCard';
+import RickyAndMortyCard from '@/presentation/components/cards/ricky-and-morty-card/RickyAndMortyCard';
 import { StyledCharactersPageBodyContainer } from './CharactersPageBody.styles';
 import { useAppDispatch, useAppSelector } from '@/data/store/hooks';
 import {

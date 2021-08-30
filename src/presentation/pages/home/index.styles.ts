@@ -12,7 +12,7 @@ export const StyledHomeContainer = styled.div`
 
 export const StyledHomeMainContentContainer = styled.div`
   min-height: calc(100vh - 100px);
-  width: 1400px;
+  max-width: 1400px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

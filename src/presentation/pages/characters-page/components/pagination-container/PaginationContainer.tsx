@@ -1,5 +1,5 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
-import { StyledPaginationContainer } from '@/presentation/pages/characters-page/components/characters-page-header/sub-components/pagination-container/PaginationContainer.styles';
+import { StyledPaginationContainer } from '@/presentation/pages/characters-page/components/pagination-container/PaginationContainer.styles';
 
 interface Props {
   handlePageChange: (type: 'previous' | 'next') => void;
