@@ -9,7 +9,7 @@ export const StyledCharactersListsHeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 10px auto;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
 
   .characters-list-header-title {

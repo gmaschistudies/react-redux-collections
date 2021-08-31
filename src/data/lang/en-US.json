@@ -1,0 +1,33 @@
+{
+  "characters.ricky.and.morty.text": "Ricky and Morty",
+  "characters.pokemon.text": "Pokemon",
+  "characters.pokemons.text": "Pokemons",
+  "characters.pokemons.lowercase.kebab.text": "pokemons",
+  "characters.ricky.and.morty.lowercase.kebab.text": "ricky-and-morty",
+
+  "routes.home": "/",
+  "routes.characters.lists": "/characters-lists",
+  "routes.characters.page": "/characters-page/:id",
+  "routes.characters.page.ricky.and.morty": "/characters-page/ricky-and-morty",
+  "routes.characters.page.pokemon": "/characters-page/pokemons",
+  "routes.info.graph": "/info-graph",
+
+  "components.ricky.and.morty.card.info.species": "Species:",
+  "components.ricky.and.morty.card.info.gender": "Gender:",
+
+  "characters.lists.header.title": "Characters' Lists",
+  "characters.lists.header.subtitle": "Select one collection to view the characters",
+
+  "characters.page.header.title": "Characters",
+  "characters.page.header.subtitle": "Click on a character to save it to your collection",
+  "characters.page.header.navigation.button.lists.home": "Characters' List Home",
+  "characters.page.pagination.container.button.previous.text": "Previous",
+  "characters.page.pagination.container.button.next.text": "Next",
+
+  "collection.page.main.content.title": "Collection",
+
+  "info.graph.page.chart.title": "Characters' Type Collection Info",
+  "info.graph.page.empty.collection.text": "Your collection is empty",
+
+  "info.graph.datasets.label": "# of characters"
+}

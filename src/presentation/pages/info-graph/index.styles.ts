@@ -13,7 +13,7 @@ export const StyledInfoGraphContainer = styled.div`
 
 export const StyledInfoGraphMainContentContainer = styled.div`
   min-height: calc(100vh - 100px);
-  max-width: 70%;
+  max-width: 90%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

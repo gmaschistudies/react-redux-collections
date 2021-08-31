@@ -8,12 +8,12 @@ export const StyledStyleSwitcher = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  cursor: pointer;
 
   .header-style-switcher {
     width: 90%;
     max-height: 60px;
     transition: 0.8s;
+    cursor: pointer;
 
     &:hover {
       transform: scale(0.8);

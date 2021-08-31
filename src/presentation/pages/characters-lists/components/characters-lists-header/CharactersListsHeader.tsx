@@ -1,32 +1,46 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import { StyledCharactersListsHeaderContainer } from './CharactersListsHeader.styles';
 import NavigationButton from '@/presentation/components/buttons/navigation-button/NavigationButton';
 
 const CharactersListsHeader: FC = (): RE => {
   const history = useHistory();
 
+  const intl = useIntl();
+
   const handlePokemonClick = () => {
-    history.push('/characters-page/pokemons');
+    history.push(intl.formatMessage({ id: 'routes.characters.page.pokemon' }));
   };
 
   const handleRickyAndMortyClick = () => {
-    history.push('/characters-page/ricky-and-morty');
+    history.push(
+      intl.formatMessage({ id: 'routes.characters.page.ricky.and.morty' })
+    );
   };
 
   return (
     <StyledCharactersListsHeaderContainer>
-      <h1 className="characters-list-header-title">Characters&apos; Lists</h1>
+      <h1 className="characters-list-header-title">
+        {intl.formatMessage({ id: 'characters.lists.header.title' })}
+      </h1>
       <h2 className="characters-list-header-subtitle">
-        Select one collection to view the characters
+        {intl.formatMessage({ id: 'characters.lists.header.subtitle' })}
       </h2>
 
       <div className="characters-header-buttons-container">
         <NavigationButton
-          text="Ricky and Morty"
+          text={intl.formatMessage({
+            id: 'characters.ricky.and.morty.text',
+          })}
           onClick={() => handleRickyAndMortyClick()}
         />
-        <NavigationButton text="Pokemon" onClick={() => handlePokemonClick()} />
+        <NavigationButton
+          text={intl.formatMessage({
+            id: 'characters.pokemon.text',
+          })}
+          onClick={() => handlePokemonClick()}
+        />
       </div>
     </StyledCharactersListsHeaderContainer>
   );

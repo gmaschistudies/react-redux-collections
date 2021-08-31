@@ -18,9 +18,6 @@ const HomeRedirect = (
   />
 );
 
-// "routes.characters-page.pokemon": "/characters-page/pokemon",
-// "routes.characters-page.ricky-and-morty": "/characters-page/ricky-and-morty"
-
 const Routes: FC = (): RE => {
   const intl = useIntl();
 
@@ -34,17 +31,17 @@ const Routes: FC = (): RE => {
         />
         <Route
           exact
-          path={intl.formatMessage({ id: 'routes.characters-lists' })}
+          path={intl.formatMessage({ id: 'routes.characters.lists' })}
           component={CharactersLists}
         />
         <Route
           exact
-          path={intl.formatMessage({ id: 'routes.characters-page' })}
+          path={intl.formatMessage({ id: 'routes.characters.page' })}
           component={CharactersPage}
         />
         <Route
           exact
-          path={intl.formatMessage({ id: 'routes.info-graph' })}
+          path={intl.formatMessage({ id: 'routes.info.graph' })}
           component={InfoGraphPage}
         />
         {HomeRedirect}

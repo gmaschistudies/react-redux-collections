@@ -1,4 +1,5 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
+import { useIntl } from 'react-intl';
 import { StyledPaginationContainer } from '@/presentation/pages/characters-page/components/pagination-container/PaginationContainer.styles';
 import { useAppSelector } from '@/data/store/hooks';
 import { selectStyle } from '@/data/store/slices/style/StyleSlice';
@@ -20,6 +21,8 @@ const PaginationContainer: FC<Props> = ({ handlePageChange }: Props): RE => {
 
   const darkMode = useAppSelector(selectStyle);
 
+  const intl = useIntl();
+
   return (
     <StyledPaginationContainer theme={darkMode}>
       <button
@@ -28,7 +31,9 @@ const PaginationContainer: FC<Props> = ({ handlePageChange }: Props): RE => {
         className="pagination-container-button"
         onClick={(e) => handlePaginationButtonClick(e)}
       >
-        Previous
+        {intl.formatMessage({
+          id: 'characters.page.pagination.container.button.previous.text',
+        })}
       </button>
       <button
         type="button"
@@ -36,7 +41,9 @@ const PaginationContainer: FC<Props> = ({ handlePageChange }: Props): RE => {
         className="pagination-container-button"
         onClick={(e) => handlePaginationButtonClick(e)}
       >
-        Next
+        {intl.formatMessage({
+          id: 'characters.page.pagination.container.button.next.text',
+        })}
       </button>
     </StyledPaginationContainer>
   );

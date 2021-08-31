@@ -2,7 +2,7 @@ import { Messages } from './L10n.config';
 import LocaleRepository from './LocaleRepository';
 
 const DEFAULT_LOCALE = 'pt-BR';
-const SUPPORTED_LOCALES = [DEFAULT_LOCALE];
+const SUPPORTED_LOCALES = [DEFAULT_LOCALE, 'en-US'];
 
 function getMessagesByLocale(locale: string): Record<string, string> {
   const [lang] = locale != null ? locale.split('-') : [];

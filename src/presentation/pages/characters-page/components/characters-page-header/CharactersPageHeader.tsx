@@ -1,5 +1,6 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import NavigationButton from '@/presentation/components/buttons/navigation-button/NavigationButton';
 import { StyledCharactersPageHeaderContainer } from './CharactersPageHeader.styles';
 import PaginationContainer from '../pagination-container/PaginationContainer';
@@ -21,25 +22,36 @@ const CharactersPageHeader: FC<Props> = ({
     history.push('/characters-lists');
   };
 
+  const intl = useIntl();
+
   return (
     <StyledCharactersPageHeaderContainer>
       <h1 className="characters-page-header-title">
-        {`${currentCharacters
-          .split('-')
-          .map((word) => word.replace(/^\w/, (e) => e.toUpperCase()))
-          .join(' ')} Characters`}
+        {`${
+          currentCharacters === 'pokemons'
+            ? intl.formatMessage({ id: 'characters.pokemons.text' })
+            : `${intl.formatMessage({
+                id: 'characters.ricky.and.morty.text',
+              })} ${intl.formatMessage({
+                id: 'characters.page.header.title',
+              })}`
+        }`}
       </h1>
       <h2 className="characters-page-header-subtitle">
-        Click on a character to save it to your collection
+        {intl.formatMessage({ id: 'characters.page.header.subtitle' })}
       </h2>
       <div className="characters-header-page-buttons-container">
         <NavigationButton
-          text="Characters' List Home"
+          text={intl.formatMessage({
+            id: 'characters.page.header.navigation.button.lists.home',
+          })}
           onClick={() => handleCharactersListsHomeClick()}
         />
         <NavigationButton
           text={
-            currentCharacters === 'pokemons' ? 'Ricky and Morty' : 'Pokemons'
+            currentCharacters === 'pokemons'
+              ? intl.formatMessage({ id: 'characters.ricky.and.morty.text' })
+              : intl.formatMessage({ id: 'characters.pokemon.text' })
           }
           onClick={() => handleCharacterChange()}
         />

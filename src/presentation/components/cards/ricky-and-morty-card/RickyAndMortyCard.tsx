@@ -1,5 +1,6 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import { useAppDispatch, useAppSelector } from '@/data/store/hooks';
 import { StyledRickyAndMortyCard } from './RickyAndMortyCard.styles';
 import {
@@ -43,6 +44,8 @@ const RickyAndMortyCard: FC<Props> = ({
   const history = useHistory();
   const path = history.location.pathname;
 
+  const intl = useIntl();
+
   return (
     <StyledRickyAndMortyCard
       onClick={() => handleContainerClick()}
@@ -55,10 +58,14 @@ const RickyAndMortyCard: FC<Props> = ({
       <div className="ricky-and-morty-card-info">
         <h3 className="ricky-and-morty-card-info-name">{name}</h3>
         <p className="ricky-and-morty-card-info-general-info">
-          Species: {species}
+          {`${intl.formatMessage({
+            id: 'components.ricky.and.morty.card.info.species',
+          })} ${species}`}
         </p>
         <p className="ricky-and-morty-card-info-general-info">
-          Gender: {gender}
+          {`${intl.formatMessage({
+            id: 'components.ricky.and.morty.card.info.gender',
+          })} ${gender}`}
         </p>
       </div>
     </StyledRickyAndMortyCard>

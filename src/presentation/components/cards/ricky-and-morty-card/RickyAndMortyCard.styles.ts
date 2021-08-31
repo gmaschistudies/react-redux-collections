@@ -20,6 +20,7 @@ export const StyledRickyAndMortyCard = styled.div`
   .ricky-and-morty-card-image {
     width: 100%;
     height: 200px;
+    box-sizing: border-box;
     border-bottom: ${(props) =>
       props.theme === true ? '2px solid white' : '2px solid black'};
   }

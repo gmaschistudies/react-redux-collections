@@ -4,6 +4,7 @@ import React, {
   useState,
 } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import Header from '@/presentation/components/header/Header';
 import Footer from '@/presentation/components/footer/Footer';
 import {
@@ -29,13 +30,30 @@ const CharactersPage: FC = (): RE => {
   const [currentCharacters, setCurrentCharacters] = useState<string>(match.id);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  const intl = useIntl();
+
   const handleCharacterChange = () => {
-    if (currentCharacters === 'pokemons') {
-      setCurrentCharacters('ricky-and-morty');
-      history.push('/characters-page/ricky-and-morty');
+    if (
+      currentCharacters ===
+      intl.formatMessage({ id: 'characters.pokemons.lowercase.kebab.text' })
+    ) {
+      setCurrentCharacters(
+        intl.formatMessage({
+          id: 'characters.ricky.and.morty.lowercase.kebab.text',
+        })
+      );
+      history.push(
+        `${intl.formatMessage({
+          id: 'routes.characters.page.ricky.and.morty',
+        })}`
+      );
     } else {
-      setCurrentCharacters('pokemons');
-      history.push('/characters-page/pokemons');
+      setCurrentCharacters(
+        intl.formatMessage({ id: 'characters.pokemons.lowercase.kebab.text' })
+      );
+      history.push(
+        `${intl.formatMessage({ id: 'routes.characters.page.pokemon' })}`
+      );
     }
     setCurrentPage(1);
   };
@@ -44,12 +62,17 @@ const CharactersPage: FC = (): RE => {
     if (type === 'next') {
       // eslint-disable-next-line no-lonely-if
       if (
-        (currentCharacters === 'pokemons' &&
-          (currentPage < pokemonsNumberOfPages ||
-            pokemonsNumberOfPages !== 0)) ||
-        (currentCharacters === 'ricky-and-morty' &&
+        (currentCharacters ===
+          intl.formatMessage({
+            id: 'characters.pokemons.lowercase.kebab.text',
+          }) &&
+          (currentPage < pokemonsNumberOfPages || currentPage === 1)) ||
+        (currentCharacters ===
+          intl.formatMessage({
+            id: 'characters.ricky.and.morty.lowercase.kebab.text',
+          }) &&
           (currentPage < rickyAndMortyCharactersNumberOfPages ||
-            rickyAndMortyCharactersNumberOfPages !== 0))
+            currentPage === 1))
       ) {
         setCurrentPage(currentPage + 1);
       }

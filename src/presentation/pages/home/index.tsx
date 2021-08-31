@@ -1,4 +1,5 @@
 import React, { FunctionComponent as FC, ReactElement as RE } from 'react';
+import { useIntl } from 'react-intl';
 import {
   StyledHomeCardsContainer,
   StyledHomeContainer,
@@ -16,11 +17,15 @@ const Home: FC = (): RE => {
   const collectionData = useAppSelector(selectAllCollection);
   const darkMode = useAppSelector(selectStyle);
 
+  const intl = useIntl();
+
   return (
     <StyledHomeContainer theme={darkMode}>
       <Header />
       <StyledHomeMainContentContainer>
-        <h1 className="home-main-content-title">Collection</h1>
+        <h1 className="home-main-content-title">
+          {intl.formatMessage({ id: 'collection.page.main.content.title' })}
+        </h1>
         <StyledHomeCardsContainer>
           {collectionData.map((item) => {
             const { name, type, image, gender, species } = item;

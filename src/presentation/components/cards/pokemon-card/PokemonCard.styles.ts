@@ -18,6 +18,7 @@ export const StyledPokemonCard = styled.div`
   .pokemon-card-image {
     width: 100%;
     height: 200px;
+    box-sizing: border-box;
     border-bottom: ${(props) =>
       props.theme === true ? '2px solid white' : '2px solid black'};
   }

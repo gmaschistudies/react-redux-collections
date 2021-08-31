@@ -1,11 +1,33 @@
 {
-  "text": "texto",
+  "characters.ricky.and.morty.text": "Ricky e Morty",
+  "characters.pokemon.text": "Pokemon",
+  "characters.pokemons.text": "Pokemons",
+  "characters.pokemons.lowercase.kebab.text": "pokemons",
+  "characters.ricky.and.morty.lowercase.kebab.text": "ricky-e-morty",
 
-  "routes.example": "/example",
   "routes.home": "/",
-  "routes.characters-lists": "/characters-lists",
-  "routes.characters-page": "/characters-page/:id",
-  "routes.characters-page.pokemon": "/characters-page/pokemon",
-  "routes.characters-page.ricky-and-morty": "/characters-page/ricky-and-morty",
-  "routes.info-graph": "/info-graph"
+  "routes.characters.lists": "/lista-de-personagens",
+  "routes.characters.page": "/pagina-de-personagens/:id",
+  "routes.characters.page.ricky.and.morty": "/pagina-de-personagens/ricky-e-morty",
+  "routes.characters.page.pokemon": "/pagina-de-personagens/pokemons",
+  "routes.info.graph": "/grafico-informacoes",
+
+  "components.ricky.and.morty.card.info.species": "Espécie:",
+  "components.ricky.and.morty.card.info.gender": "Gênero:",
+
+  "characters.lists.header.title": "Lista de Personagens",
+  "characters.lists.header.subtitle": "Selecione uma coleção para ver os personagens",
+
+  "characters.page.header.title": "Personagens",
+  "characters.page.header.subtitle": "Clique em um personagem para adiciona-lo a sua coleção",
+  "characters.page.header.navigation.button.lists.home": "Página Inicial da Lista de Personagens",
+  "characters.page.pagination.container.button.previous.text": "Anterior",
+  "characters.page.pagination.container.button.next.text": "Próximo",
+
+  "collection.page.main.content.title": "Coleção",
+
+  "info.graph.page.chart.title": "Informação sobre os tipos de personagem da coleção",
+  "info.graph.page.empty.collection.text": "Sua coleção está vazia",
+
+  "info.graph.datasets.label": "# de personagens"
 }

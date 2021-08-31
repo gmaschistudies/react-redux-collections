@@ -51,7 +51,7 @@ const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState,
   reducers: {
-    addPageFetched: (state, action: PayloadAction<number>) => {
+    addPokemonPageFetched: (state, action: PayloadAction<number>) => {
       state.pagesFetched.push(action.payload);
     },
   },
@@ -74,7 +74,7 @@ const pokemonSlice = createSlice({
   },
 });
 
-export const { addPageFetched } = pokemonSlice.actions;
+export const { addPokemonPageFetched } = pokemonSlice.actions;
 
 export const selectPokemons = (state: RootState) => state.pokemon.data;
 

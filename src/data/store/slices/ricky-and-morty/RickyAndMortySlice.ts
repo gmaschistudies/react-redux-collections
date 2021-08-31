@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 // eslint-disable-next-line import/no-cycle
 import { RootState } from '@/data/store';
@@ -26,7 +26,11 @@ export const fetchRickyAndMorty = createAsyncThunk(
 const RickyAndMortySlice = createSlice({
   name: 'rickyAndMorty',
   initialState,
-  reducers: {},
+  reducers: {
+    addRickyAndMortyPageFetched: (state, action: PayloadAction<number>) => {
+      state.pagesFetched.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchRickyAndMorty.pending, (state) => {
       state.status = 'loading';
@@ -37,11 +41,11 @@ const RickyAndMortySlice = createSlice({
         state.charactersCount = action.payload.info.count;
       }
       state.numberOfPages = action.payload.info.pages;
-      if (action.payload.info.next) {
-        state.pagesFetched = state.pagesFetched.concat(
-          parseInt(action.payload.info.next.match(/\d+/g).join(), 10) - 1
-        );
-      }
+      // if (action.payload.info.next) {
+      //   state.pagesFetched = state.pagesFetched.concat(
+      //     parseInt(action.payload.info.next.match(/\d+/g).join(), 10) - 1
+      //   );
+      // }
       state.data = state.data.concat(action.payload.results);
     });
     builder.addCase(fetchRickyAndMorty.rejected, (state, action) => {
@@ -50,6 +54,8 @@ const RickyAndMortySlice = createSlice({
     });
   },
 });
+
+export const { addRickyAndMortyPageFetched } = RickyAndMortySlice.actions;
 
 export const selectRickyAndMortyPagesFetched = (state: RootState) =>
   state.rickyAndMorty.pagesFetched;
