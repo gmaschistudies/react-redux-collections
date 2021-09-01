@@ -20,7 +20,6 @@ export const StyledHomeMainContentContainer = styled.div`
   align-items: center;
   margin: 20px;
   padding: 10px;
-  /* border: 2px solid white; */
 
   .home-main-content-title {
     font-size: 36px;
@@ -32,11 +31,10 @@ export const StyledHomeMainContentContainer = styled.div`
 
 export const StyledHomeCardsContainer = styled.div`
   width: 100%;
-  min-height: 900px;
+  min-height: 500px;
   box-sizing: border-box;
   margin: 10px;
   padding: 15px;
-  /* border: 2px solid white; */
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
